@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -54,10 +55,32 @@ public class KeluhanKuFragment extends ListFragment {
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View viewKeluhan = inflater.inflate(R.layout.keluhan_fragment, container, false);
+        View viewKeluhan = inflater.inflate(R.layout.keluhanku_fragment, container, false);
         ListView lv_keluhan = (ListView) viewKeluhan.findViewById(android.R.id.list);
         adapter = new ListKeluhanKuAdapter(this, listKeluhan);
         lv_keluhan.setAdapter(adapter);
+
+        lv_keluhan.setOnTouchListener(new ListView.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch (action) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Disallow ScrollView to intercept touch events.
+                        v.getParent().requestDisallowInterceptTouchEvent(true);
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                        // Allow ScrollView to intercept touch events.
+                        v.getParent().requestDisallowInterceptTouchEvent(false);
+                        break;
+                }
+
+                // Handle ListView touch events.
+                v.onTouchEvent(event);
+                return true;
+            }
+        });
 
         db = new SQLiteHandler(getActivity().getApplicationContext());
         session = new SessionManager(getActivity().getApplicationContext());
@@ -139,4 +162,6 @@ public class KeluhanKuFragment extends ListFragment {
         }else{
             Log.e("fragment Visible","false"); }
     }
+
+
 }

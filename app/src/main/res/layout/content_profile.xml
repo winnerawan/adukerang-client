@@ -27,9 +27,12 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"
             android:layout_width="match_parent"
-            android:layout_height="2000dp"
+            android:layout_height="360dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:paddingRight="20dp"
-            android:paddingTop="20dp"
+            android:isScrollContainer="true"
+            android:nestedScrollingEnabled="true"
+            android:fillViewport="true"
             android:paddingLeft="20dp"
             android:background="@android:color/white" />
 

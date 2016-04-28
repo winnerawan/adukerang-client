@@ -1,9 +1,11 @@
 package co.ipb.adukerang.activity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -41,7 +43,7 @@ import co.ipb.adukerang.handler.SQLiteHandler;
 import co.ipb.adukerang.handler.SessionManager;
 import co.ipb.adukerang.helper.CircledNetworkImageView;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity extends FragmentActivity {
 
     private static final String TAG = ProfileActivity.class.getSimpleName();
 

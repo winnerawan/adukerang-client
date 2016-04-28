@@ -82,13 +82,15 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 
         db = new SQLiteHandler(getApplicationContext());
         session = new SessionManager(getApplicationContext());
-        getAvatar();
+
         HashMap<String, String> user = db.getUserDetails();
         name=user.get("name");
         email=user.get("email");
         uid=user.get("uid");
+        getAvatar();
         txtUsername.setText(name);
         txtEmail.setText(email);
+
         bLapor.setOnClickListener(this);
         bCancel.setOnClickListener(this);
         avatar.setOnClickListener(this);
@@ -295,6 +297,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 
                                 String pp = teknisi.getString("profile_picture");
                                 avatar.setImageUrl(pp, imageLoader);
+                                Log.i(TAG, "log................................"+pp);
                             }
 
                         } catch (JSONException e) {
