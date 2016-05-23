@@ -35,4 +35,7 @@ public class AppConfig {
     public static String URL_GCM            = "http://api.winnerawan.net/adukerang/GCM.php";
     public static final String SENDER_ID    = "280597259588";
     public static final String SERVER_URL   = "http://api.winnerawan.net/adukerang/";
+    public static final String SENDER_EMAIL  = "adukerangofficial@gmail.com";
+    public static final String SENDER_PASSWD = "Iseng2pertamax";
+
 }

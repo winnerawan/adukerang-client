@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="23"
+    density="xxxhdpi"
+    format="7"
+    timestamp="32790327624755"
+    verifier="COMPATIBLE" >
+
+    <task
+        name="javac"
+        duration="2574" />
+    <task
+        name="instant-run-dex"
+        duration="1034" />
+    <task
+        name="instant-run-transform"
+        duration="107" />
+    <task
+        name="verifier"
+        duration="76" />
+
+    <artifact
+        location="/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
+
+    <build timestamp="32618202331376" >
+        <artifact
+            location="/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="32790327624755"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+
+</instant-run>

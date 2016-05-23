@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -128,7 +129,7 @@ public class LoginActivity extends Activity {
                 Log.e(TAG, "SPINNER = " +level.getSelectedItem().toString());
                 email = txtEmail.getText().toString().trim();
                 String password = txtPassword.getText().toString().trim();
-
+/*
                     if (level.getSelectedItem().toString().equals("Teknisi") && (!email.isEmpty() && (!password.isEmpty()))) {
                         loginTeknisi(email, password);
                         Log.e(TAG, txtEmail.getText().toString());
@@ -143,6 +144,15 @@ public class LoginActivity extends Activity {
                     } if ((txtEmail.getText().toString().isEmpty() && txtPassword.getText().toString().isEmpty()) &&
                         (level.getSelectedItem().toString().equals("Teknisi") || level.getSelectedItem().toString().equals("User"))) {
                         Toast.makeText(getApplicationContext(),"Isi Email & Password !",Toast.LENGTH_LONG).show();
+                    }
+*/
+                    if(!email.isEmpty() && !password.isEmpty()) {
+                        checkLogin(email, password);
+
+                    } else {
+                        Snackbar snackbar = Snackbar.make(snackbarCoordinatorLayout,
+                                "Isi Email dan Password ? ", Snackbar.LENGTH_LONG);
+                        snackbar.show();
                     }
             }
         });
@@ -221,6 +231,8 @@ public class LoginActivity extends Activity {
 
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
+
+
     private void loginTeknisi(final String email, final String password) {
         // Tag used to cancel the request
         String tag_string_req = "req_login";

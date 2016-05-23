@@ -1,0 +1,22 @@
+Pengaduan :
+1. Tekan button tambah pada halaman utama atau beranda.
+2. Isi data pengaduan.
+3. Tekan button lapor.
+
+Edit Profil :
+1. Tekan button pilihan menu di pojok kiri atas.
+2. Pilih menu setting, lalu ubah data.
+3. Tekan button send.
+
+Detail Pengaduan :
+1. Pada halaman utama, tekan list pengaduan yang akan dilihat.
+
+Komentar :
+1. Buka detail pengaduan.
+2. Tekan button comment.
+3. Isi komentar
+4. Tekan button send.
+
+Like :
+1. Buka detail pengaduan.
+2. Tekan button like.

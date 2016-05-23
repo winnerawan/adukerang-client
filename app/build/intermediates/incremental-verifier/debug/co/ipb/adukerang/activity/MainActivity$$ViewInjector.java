@@ -10,8 +10,8 @@ public class MainActivity$$ViewInjector<T extends co.ipb.adukerang.activity.Main
     View view;
     view = finder.findRequiredView(source, 2131755183, "field 'register'");
     target.register = finder.castView(view, 2131755183, "field 'register'");
-    view = finder.findRequiredView(source, 2131755184, "field 'login'");
-    target.login = finder.castView(view, 2131755184, "field 'login'");
+    view = finder.findRequiredView(source, 2131755185, "field 'login'");
+    target.login = finder.castView(view, 2131755185, "field 'login'");
   }
 
   @Override public void reset(T target) {

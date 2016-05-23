@@ -8,12 +8,12 @@ import butterknife.ButterKnife.Injector;
 public class ProfileActivity$$ViewInjector<T extends co.ipb.adukerang.activity.ProfileActivity> implements Injector<T> {
   @Override public void inject(final Finder finder, final T target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131755244, "field 'tv_username'");
-    target.tv_username = finder.castView(view, 2131755244, "field 'tv_username'");
-    view = finder.findRequiredView(source, 2131755214, "field 'tv_email'");
-    target.tv_email = finder.castView(view, 2131755214, "field 'tv_email'");
-    view = finder.findRequiredView(source, 2131755243, "field 'avatar'");
-    target.avatar = finder.castView(view, 2131755243, "field 'avatar'");
+    view = finder.findRequiredView(source, 2131755248, "field 'tv_username'");
+    target.tv_username = finder.castView(view, 2131755248, "field 'tv_username'");
+    view = finder.findRequiredView(source, 2131755218, "field 'tv_email'");
+    target.tv_email = finder.castView(view, 2131755218, "field 'tv_email'");
+    view = finder.findRequiredView(source, 2131755247, "field 'avatar'");
+    target.avatar = finder.castView(view, 2131755247, "field 'avatar'");
   }
 
   @Override public void reset(T target) {

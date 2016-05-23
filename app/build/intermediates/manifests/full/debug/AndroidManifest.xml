@@ -125,6 +125,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="co.ipb.adukerang.activity.DetailsActivity" />
         </activity>
+        <activity android:name="co.ipb.adukerang.activity.Help" />
+        <activity android:name="co.ipb.adukerang.handler.Version" />
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"

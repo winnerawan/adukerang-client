@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -32,6 +33,7 @@ import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import co.ipb.adukerang.GMailSender;
 import co.ipb.adukerang.R;
 import co.ipb.adukerang.controller.AppConfig;
 import co.ipb.adukerang.controller.AppController;
@@ -131,6 +133,7 @@ public class RegisterActivity extends ActionBarActivity {
                 String email = txtEmail.getText().toString();
                 String password = txtPassword.getText().toString();
                 String gcm_regid = txtregid.getText().toString();
+
 
                 if (!name.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
                     registerUser(name, email, password, tesid);
@@ -275,7 +278,36 @@ public class RegisterActivity extends ActionBarActivity {
             throw new RuntimeException(e);
         }
     }
+/*
+    private void sendEmailInBackground() {
+        new AsyncTask<Void, Void, String>() {
+            String dest_email = txtEmail.getText().toString().trim();
+            String passwd = txtPassword.getText().toString().trim();
+            String nm = txtUsername.getText().toString();
 
+            @Override
+            protected String doInBackground(Void... params) {
+                String sender_email = "adukerangofficial@gmail.com";
+                String sender_pass = "Iseng2pertamax";
+                String SUBJECT_EMAIL = "ADUKERANG ACCOUNT";
+                String BODY_EMAIL = "Your Account on AduKerang is\n" + "Name\t: " + nm
+                        + "\nEmail\t: " + dest_email + "\nPassword\t: " + passwd;
+                try {
+                    GMailSender sender = new GMailSender(sender_email, sender_pass);
+                    sender.sendMail(SUBJECT_EMAIL, BODY_EMAIL, sender_email, dest_email);
+                } catch (Exception e) {
+                    Log.e("SEND MAIL", e.getMessage(), e);
+                }
+                return dest_email;
+            }
+
+            @Override
+            protected void onPostExecute(String dest_email) {
+
+            }
+        }.execute(null, null, null);
+    }
+    */
     //
     private void registerInBackground() {
         new AsyncTask<Void, Void, String>() {
@@ -321,6 +353,27 @@ public class RegisterActivity extends ActionBarActivity {
         editor.putInt(APP_VERSION, appVersion);
         editor.commit();
     }
+    protected void sendEmail() {
+        Log.i("Send email", "");
+        String[] TO = {""};
+        String[] CC = {""};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Your subject");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Email message goes here");
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            finish();
+            Log.i("Finished sending email", "");
+        }
+        catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(RegisterActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+        }
+    }
 
 }

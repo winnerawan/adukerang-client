@@ -108,12 +108,12 @@
         "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/src/main/res/layout/avatar.xml"
     },
     {
-        "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/mr_media_route_controller_material_dialog_b.xml",
-        "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/layout/mr_media_route_controller_material_dialog_b.xml"
-    },
-    {
         "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/activity_teknisi.xml",
         "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/src/main/res/layout/activity_teknisi.xml"
+    },
+    {
+        "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/mr_media_route_controller_material_dialog_b.xml",
+        "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/layout/mr_media_route_controller_material_dialog_b.xml"
     },
     {
         "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/material_drawer_slider.xml",
@@ -164,6 +164,10 @@
         "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/src/main/res/layout/activity_dashboard.xml"
     },
     {
+        "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/help.xml",
+        "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/src/main/res/layout/help.xml"
+    },
+    {
         "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/material_drawer_item_switch.xml",
         "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_switch.xml"
     },
@@ -206,6 +210,10 @@
     {
         "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
         "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/activity_version.xml",
+        "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/src/main/res/layout/activity_version.xml"
     },
     {
         "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/material_drawer_item_section.xml",
@@ -352,6 +360,10 @@
         "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_list_menu_item_radio.xml"
     },
     {
+        "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/tool.xml",
+        "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/src/main/res/layout/tool.xml"
+    },
+    {
         "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
         "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/notification_template_big_media.xml"
     },
@@ -414,6 +426,10 @@
     {
         "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
         "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/activity_help.xml",
+        "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/src/main/res/layout/activity_help.xml"
     },
     {
         "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/layout/nav_header_main.xml",
