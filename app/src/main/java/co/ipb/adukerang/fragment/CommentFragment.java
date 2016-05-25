@@ -43,15 +43,15 @@ public class CommentFragment extends ListFragment {
     private ListCommentAdapter adapter;
     public JSONObject obj;
     String id_keluhan;
-
+    Comment comment;
+    ListView lv_keluhan;
     public CommentFragment() {
 
     }
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View viewKeluhan = inflater.inflate(R.layout.comment_fragment, container, false);
-
-        ListView lv_keluhan = (ListView) viewKeluhan.findViewById(android.R.id.list);
+        lv_keluhan = (ListView) viewKeluhan.findViewById(android.R.id.list);
         adapter = new ListCommentAdapter(this, listComment);
         lv_keluhan.setAdapter(adapter);
         adapter.notifyDataSetChanged();
@@ -72,7 +72,7 @@ public class CommentFragment extends ListFragment {
                 for (int i = 0; i < response.length(); i++)
                     try {
                         obj = response.getJSONObject(i);
-                        Comment comment =  new Comment();
+                        comment =  new Comment();
 
                         comment.setId_keluhan(obj.getInt("id_keluhan"));
                         comment.setEmail(obj.getString("email"));
@@ -108,7 +108,8 @@ public class CommentFragment extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         //selected = ((SetanTextView)v.findViewById(R.id.title)).getText().toString();
         //String image = ((Drink)drinkMenus.get(position)).getThumbnailUrl();
-        String selected_idk = ((TextView)v.findViewById(R.id.idk)).getText().toString();
+        //String selected_idk = ((TextView)v.findViewById(R.id.idk)).getText().toString();
+        adapter.notifyDataSetChanged();
 
     }
     @Override
@@ -124,5 +125,15 @@ public class CommentFragment extends ListFragment {
         }
 
     }
-
+    public void updateListComment(List<Comment> newComment) {
+        listComment.clear();
+        listComment.addAll(newComment);
+        adapter.notifyDataSetChanged();
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        listComment.clear();
+        adapter.updateListComment(listComment);
+    }
 }

@@ -110,6 +110,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.CommentActivity"
+            android:windowSoftInputMode="adjustPan|adjustResize"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

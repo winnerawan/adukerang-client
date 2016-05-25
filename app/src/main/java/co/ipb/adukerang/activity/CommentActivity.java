@@ -21,25 +21,33 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gcm.GCMRegistrar;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import co.ipb.adukerang.R;
+import co.ipb.adukerang.adapter.ListCommentAdapter;
 import co.ipb.adukerang.controller.AppConfig;
 import co.ipb.adukerang.controller.AppController;
 import co.ipb.adukerang.fragment.CommentFragment;
 import co.ipb.adukerang.handler.SQLiteHandler;
 import co.ipb.adukerang.handler.SessionManager;
+import co.ipb.adukerang.fragment.CommentFragment;
+import co.ipb.adukerang.model.Comment;
 
 public class CommentActivity extends AppCompatActivity {
 
@@ -48,10 +56,14 @@ public class CommentActivity extends AppCompatActivity {
     Toolbar toolbar;
     @InjectView(R.id.bComment)
     Button bComment;
+
+    private ListCommentAdapter adapter;
+    public JSONObject obj;
     @InjectView(R.id.txtcomment)
     EditText txtComment;
     @InjectView(R.id.temp)
     TextView temp;
+    private List<Comment> listComment = new ArrayList<Comment>();
     private ProgressDialog pDialog;
     private SQLiteHandler db;
     private SessionManager session;
@@ -72,7 +84,6 @@ public class CommentActivity extends AppCompatActivity {
         session = new SessionManager(getApplicationContext());
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
-
         temp.setText(idk);
         bComment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +94,7 @@ public class CommentActivity extends AppCompatActivity {
                 String comment = txtComment.getText().toString();
                 String id_kel = temp.getText().toString();
                 postComment(id_kel, email, comment);
-
+                adapter.notifyDataSetChanged();
 
             }
         });
@@ -157,7 +168,10 @@ public class CommentActivity extends AppCompatActivity {
                 params.put("id_keluhan", id_keluhan);
                 params.put("email", email);
                 params.put("komentar", komentar);
+
                 return params;
+
+
             }
 
         };
@@ -172,5 +186,59 @@ public class CommentActivity extends AppCompatActivity {
     private void hideDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+    private void reloadComment() {
+        JsonArrayRequest foodReq = new JsonArrayRequest(AppConfig.URL_GET_COMMENT+idk, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                Log.d(TAG, response.toString());
+                hidePDialog();
+                // Parsing json
+                for (int i = 0; i < response.length(); i++)
+                    try {
+                        obj = response.getJSONObject(i);
+                        Comment comment =  new Comment();
+
+                        comment.setId_keluhan(obj.getInt("id_keluhan"));
+                        comment.setEmail(obj.getString("email"));
+                        comment.setId_komentar(obj.getInt("id_komentar"));
+                        comment.setName(obj.getString("name"));
+                        comment.setKomentar(obj.getString("komentar"));
+                        comment.setProfilePicture(obj.getString("profile_picture"));
+
+                        listComment.add(comment);
+                        adapter.notifyDataSetChanged();
+                        //View vv = viewKeluhan.findViewById(R.id.view_status);
+                        //vv.setBackgroundColor(Color.RED);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                adapter.notifyDataSetChanged();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+                VolleyLog.e("Error: ", error.toString());
+                hidePDialog();
+            }
+        });
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(foodReq);
+        adapter.notifyDataSetChanged();
+    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        hidePDialog();
+    }
+
+    private void hidePDialog() {
+        if (pDialog != null) {
+            pDialog.dismiss();
+            pDialog = null;
+        }
     }
 }

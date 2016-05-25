@@ -38,6 +38,11 @@ public class ListCommentAdapter extends BaseAdapter {
         this.listComment=listComment;
 
     }
+    public void updateListComment(List<Comment> newComment) {
+        listComment.clear();
+        listComment.addAll(newComment);
+        notifyDataSetChanged();
+    }
     @Override
     public int getCount() {
         return listComment.size();
@@ -88,7 +93,7 @@ public class ListCommentAdapter extends BaseAdapter {
             avatar.setImageUrl(pp_default, imageLoader);
 
         }
-        
         return convertView;
+
     }
 }

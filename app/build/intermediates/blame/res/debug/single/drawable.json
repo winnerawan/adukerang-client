@@ -4,16 +4,16 @@
         "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_play_dark.xml"
     },
     {
-        "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
-        "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_list_selector_holo_dark.xml"
+        "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/drawable/gradient_bg_hover.xml",
+        "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/src/main/res/drawable/gradient_bg_hover.xml"
     },
     {
         "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
         "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_textfield_search_material.xml"
     },
     {
-        "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/drawable/gradient_bg_hover.xml",
-        "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/src/main/res/drawable/gradient_bg_hover.xml"
+        "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
+        "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_list_selector_holo_dark.xml"
     },
     {
         "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/drawable/common_plus_signin_btn_text_dark.xml",
@@ -40,12 +40,12 @@
         "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.github.jd-alexander/LikeButton/0.2.0/res/drawable/heart_off.png"
     },
     {
-        "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/drawable/common_plus_signin_btn_icon_dark.xml",
-        "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_plus_signin_btn_icon_dark.xml"
-    },
-    {
         "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
         "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/drawable/common_plus_signin_btn_icon_dark.xml",
+        "source": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_plus_signin_btn_icon_dark.xml"
     },
     {
         "merged": "/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_light.xml",

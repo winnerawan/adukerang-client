@@ -121,7 +121,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="co.ipb.adukerang.activity.CommentActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan|adjustResize" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="co.ipb.adukerang.activity.DetailsActivity" />

@@ -8,16 +8,16 @@ import butterknife.ButterKnife.Injector;
 public class RegisterActivity$$ViewInjector<T extends co.ipb.adukerang.activity.RegisterActivity> implements Injector<T> {
   @Override public void inject(final Finder finder, final T target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131755229, "field 'txtUsername'");
-    target.txtUsername = finder.castView(view, 2131755229, "field 'txtUsername'");
-    view = finder.findRequiredView(source, 2131755230, "field 'txtEmail'");
-    target.txtEmail = finder.castView(view, 2131755230, "field 'txtEmail'");
-    view = finder.findRequiredView(source, 2131755231, "field 'txtPassword'");
-    target.txtPassword = finder.castView(view, 2131755231, "field 'txtPassword'");
-    view = finder.findRequiredView(source, 2131755232, "field 'bRegister'");
-    target.bRegister = finder.castView(view, 2131755232, "field 'bRegister'");
-    view = finder.findRequiredView(source, 2131755189, "field 'txtregid'");
-    target.txtregid = finder.castView(view, 2131755189, "field 'txtregid'");
+    view = finder.findRequiredView(source, 2131755232, "field 'txtUsername'");
+    target.txtUsername = finder.castView(view, 2131755232, "field 'txtUsername'");
+    view = finder.findRequiredView(source, 2131755233, "field 'txtEmail'");
+    target.txtEmail = finder.castView(view, 2131755233, "field 'txtEmail'");
+    view = finder.findRequiredView(source, 2131755234, "field 'txtPassword'");
+    target.txtPassword = finder.castView(view, 2131755234, "field 'txtPassword'");
+    view = finder.findRequiredView(source, 2131755235, "field 'bRegister'");
+    target.bRegister = finder.castView(view, 2131755235, "field 'bRegister'");
+    view = finder.findRequiredView(source, 2131755190, "field 'txtregid'");
+    target.txtregid = finder.castView(view, 2131755190, "field 'txtregid'");
   }
 
   @Override public void reset(T target) {

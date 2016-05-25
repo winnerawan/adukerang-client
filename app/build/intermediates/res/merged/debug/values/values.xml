@@ -870,6 +870,7 @@
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
+    <string name="footer">2016-Program Diploma</string>
     <string name="gcm_deleted">From GCM: server deleted %1$d pending messages!</string>
     <string name="gcm_error">From GCM: error (%1$s).</string>
     <string name="gcm_message">From GCM: you got message!</string>
@@ -943,6 +944,9 @@
     <string name="mr_media_route_controller_stop">Stop casting</string>
     <string name="mr_system_route_name">System</string>
     <string name="mr_user_route_category_name">Devices</string>
+    <string name="msg_email_sent_successfully">Your message was sent successfully.</string>
+    <string name="msg_error_sending_email">Error sending email, check your connection</string>
+    <string name="msg_sending_email">Sending email...</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="ok">OK</string>

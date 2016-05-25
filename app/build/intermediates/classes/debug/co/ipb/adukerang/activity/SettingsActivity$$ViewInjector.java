@@ -10,18 +10,18 @@ public class SettingsActivity$$ViewInjector<T extends co.ipb.adukerang.activity.
     View view;
     view = finder.findRequiredView(source, 2131755169, "field 'avatar'");
     target.avatar = finder.castView(view, 2131755169, "field 'avatar'");
-    view = finder.findRequiredView(source, 2131755233, "field 'txtUsername'");
-    target.txtUsername = finder.castView(view, 2131755233, "field 'txtUsername'");
-    view = finder.findRequiredView(source, 2131755234, "field 'txtEmail'");
-    target.txtEmail = finder.castView(view, 2131755234, "field 'txtEmail'");
-    view = finder.findRequiredView(source, 2131755235, "field 'txtPass0'");
-    target.txtPass0 = finder.castView(view, 2131755235, "field 'txtPass0'");
-    view = finder.findRequiredView(source, 2131755236, "field 'txtPass1'");
-    target.txtPass1 = finder.castView(view, 2131755236, "field 'txtPass1'");
-    view = finder.findRequiredView(source, 2131755194, "field 'bLapor'");
-    target.bLapor = finder.castView(view, 2131755194, "field 'bLapor'");
-    view = finder.findRequiredView(source, 2131755195, "field 'bCancel'");
-    target.bCancel = finder.castView(view, 2131755195, "field 'bCancel'");
+    view = finder.findRequiredView(source, 2131755238, "field 'txtUsername'");
+    target.txtUsername = finder.castView(view, 2131755238, "field 'txtUsername'");
+    view = finder.findRequiredView(source, 2131755239, "field 'txtEmail'");
+    target.txtEmail = finder.castView(view, 2131755239, "field 'txtEmail'");
+    view = finder.findRequiredView(source, 2131755240, "field 'txtPass0'");
+    target.txtPass0 = finder.castView(view, 2131755240, "field 'txtPass0'");
+    view = finder.findRequiredView(source, 2131755241, "field 'txtPass1'");
+    target.txtPass1 = finder.castView(view, 2131755241, "field 'txtPass1'");
+    view = finder.findRequiredView(source, 2131755195, "field 'bLapor'");
+    target.bLapor = finder.castView(view, 2131755195, "field 'bLapor'");
+    view = finder.findRequiredView(source, 2131755196, "field 'bCancel'");
+    target.bCancel = finder.castView(view, 2131755196, "field 'bCancel'");
   }
 
   @Override public void reset(T target) {

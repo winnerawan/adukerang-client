@@ -4,37 +4,34 @@
     api-level="23"
     density="xxxhdpi"
     format="7"
-    timestamp="32790327624755"
-    verifier="COMPATIBLE" >
+    timestamp="27932911163742" >
 
     <task
         name="javac"
-        duration="2574" />
+        duration="0" />
     <task
         name="instant-run-dex"
-        duration="1034" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="107" />
+        duration="0" />
     <task
         name="verifier"
-        duration="76" />
+        duration="0" />
 
     <artifact
-        location="/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/reload-dex/debug/classes.dex"
-        type="RELOAD_DEX" />
+        location="/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/resources-debug.ap_"
+        type="RESOURCES" />
 
-    <build timestamp="32618202331376" >
+    <build timestamp="27569052124631" >
         <artifact
             location="/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
-    <build
-        timestamp="32790327624755"
-        verifier="COMPATIBLE" >
+    <build timestamp="27932911163742" >
         <artifact
-            location="/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/reload-dex/debug/classes.dex"
-            type="RELOAD_DEX" />
+            location="/home/winnerawan/AndroidStudioProjects/adukerang-master/app/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>

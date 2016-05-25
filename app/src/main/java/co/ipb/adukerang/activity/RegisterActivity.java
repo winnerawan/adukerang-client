@@ -34,6 +34,7 @@ import java.util.Map;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import co.ipb.adukerang.GMailSender;
+import co.ipb.adukerang.Mail;
 import co.ipb.adukerang.R;
 import co.ipb.adukerang.controller.AppConfig;
 import co.ipb.adukerang.controller.AppController;
@@ -42,10 +43,14 @@ import co.ipb.adukerang.gcm.ConnectionDetector;
 import co.ipb.adukerang.handler.SQLiteHandler;
 import co.ipb.adukerang.handler.SessionManager;
 
+import com.creativityapps.gmailbackgroundlibrary.BackgroundMail;
 import com.google.android.gcm.GCMRegistrar;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
+
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 
 /**
  * Created by winnerawan on 3/23/16.
@@ -130,13 +135,53 @@ public class RegisterActivity extends ActionBarActivity {
                 regId = registerGCM();
                 //txtregid.setText(regId);
                 String name = txtUsername.getText().toString();
-                String email = txtEmail.getText().toString();
+                String email = txtEmail.getText().toString().trim();
                 String password = txtPassword.getText().toString();
                 String gcm_regid = txtregid.getText().toString();
-
+                String emailPatern= "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
                 if (!name.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
+                    ;
+                    if (!email
+                            .matches(emailPatern))
+                    {
+                        Toast.makeText(getApplicationContext(), "Email is invalid",
+                                Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                    if (!isValidEmail(email)) {
+                        Toast.makeText(getApplicationContext(), "Email is invalid",
+                                Toast.LENGTH_LONG).show();
+                    }
+                    if (!isValidEmailAddress(email)) {
+                        Toast.makeText(getApplicationContext(), "Email is invalid",
+                                Toast.LENGTH_LONG).show();
+                    }
                     registerUser(name, email, password, tesid);
+                    BackgroundMail.newBuilder(RegisterActivity.this)
+                            .withUsername("adukerangofficial@gmail.com")
+                            .withPassword("Iseng2pertamax")
+                            .withMailto(email)
+                            .withSubject("ADUKERANG OFFICIAL")
+                            .withBody("Your Account on ADUKERANG is\n"
+                                    +"\nName\t\t: "+name
+                                    +"\nEmail\t\t: "+email
+                            +"\nPassword\t: "+password
+                            +"\n\nDont Reply this Email! this is Automatically Send to Your Email.")
+                            .withOnSuccessCallback(new BackgroundMail.OnSuccessCallback(){
+                                @Override
+                                public void onSuccess() {
+                                    Log.e(TAG, "MAIL SEND");
+                                }
+                            }).withOnFailCallback(new BackgroundMail.OnFailCallback() {
+                        @Override
+                        public void onFail() {
+                            Toast.makeText(getApplicationContext(),"Your Email is Invalid!\nPlease Use Valid Email",Toast.LENGTH_LONG).show();
+                        }
+                    })
+                            .send();
+
+
                     GCMRegistrar.setRegisteredOnServer(context, true);
                     Log.e("GCM CUK", regId.toString());
                 } else {
@@ -370,10 +415,23 @@ public class RegisterActivity extends ActionBarActivity {
             startActivity(Intent.createChooser(emailIntent, "Send mail..."));
             finish();
             Log.i("Finished sending email", "");
-        }
-        catch (android.content.ActivityNotFoundException ex) {
+        } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(RegisterActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
         }
+    }
+
+        public static boolean isValidEmailAddress(String email) {
+            boolean result = true;
+            try {
+                InternetAddress emailAddr = new InternetAddress(email);
+                emailAddr.validate();
+            } catch (AddressException ex) {
+                result = false;
+            }
+            return result;
+        }
+    public final static boolean isValidEmail(CharSequence target) {
+        return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
 
 }

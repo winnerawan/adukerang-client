@@ -13,24 +13,7 @@
         android:title="" android:textSize="@dimen/font_mll">
 
     </co.ipb.adukerang.helper.KerangPrefScreen>
-<co.ipb.adukerang.helper.KerangPrefScreen
-    android:layout_below="@id/aaa"
-    android:title="@string/category_author"
-    android:paddingTop="10dip"
-    android:layout_marginBottom="10dip"
-    android:layout_marginTop="14dip">
-    <Preference
-        android:key="author"
-        android:title="Diyah Putri"
-        android:summary="@string/credits_author_summary"/>
-</co.ipb.adukerang.helper.KerangPrefScreen>
 
-<co.ipb.adukerang.helper.KerangPrefScreen android:title="@string/category_source_code">
-<Preference
-    android:key="github"
-    android:title="@string/app_name"
-    android:summary="https://github.com/winnerawan/adukerang-master"/>
-</co.ipb.adukerang.helper.KerangPrefScreen>
 
 <co.ipb.adukerang.helper.KerangPrefScreen android:title="@string/help0">
 <Preference
